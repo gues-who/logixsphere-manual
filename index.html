@@ -128,7 +128,7 @@
     white-space:nowrap;padding:11px 18px;border-radius:100px;cursor:pointer;
     font-size:14px;font-weight:600;color:var(--ink-dim);border:none;background:none;
     transition:color .25s,background .25s;position:relative;font-family:inherit}
-  .tab svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.9;
+  .tab svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;
     stroke-linecap:round;stroke-linejoin:round}
   .tab:hover{color:var(--ink)}
   .tab.active{color:#fff}
@@ -194,12 +194,15 @@
   .card:hover{transform:translateY(-6px);border-color:var(--stroke-strong);
     box-shadow:0 36px 80px -34px rgba(60,80,140,.55),inset 0 1px 0 var(--glass-hi),inset 0 0 0 1px rgba(255,255,255,.3)}
   .card:hover::after{opacity:1}
-  .card .ic,.flip-face .ic{position:relative;width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
-    margin-bottom:16px;border:1px solid rgba(255,255,255,.6);
-    background:linear-gradient(140deg,rgba(79,109,255,.16),rgba(17,184,166,.1));
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 16px -8px rgba(79,109,255,.45)}
-  .card .ic svg,.flip-face .ic svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.8;
-    stroke-linecap:round;stroke-linejoin:round}
+  .card .ic,.flip-face .ic{position:relative;width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
+    margin-bottom:16px;border:1px solid rgba(255,255,255,.7);
+    background:linear-gradient(145deg,rgba(79,109,255,.14),rgba(139,91,255,.07) 55%,rgba(17,184,166,.12));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 0 0 1px rgba(255,255,255,.18),0 8px 18px -10px rgba(79,109,255,.5);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+  .card:hover .ic{transform:translateY(-2px) rotate(-3deg);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.28),0 12px 24px -10px rgba(79,109,255,.6)}
+  .card .ic svg,.flip-face .ic svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.55;
+    stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
   .card h3,.flip-face h3{font-size:18px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
   .card p,.flip-face p{color:var(--ink-dim);font-size:14.5px}
   .card .tag{display:inline-block;margin-top:14px;font-size:11.5px;font-weight:600;
@@ -210,7 +213,7 @@
   .feat-list{list-style:none;display:grid;gap:10px;margin-top:8px}
   .feat-list li{display:flex;gap:11px;align-items:flex-start;color:var(--ink-dim);font-size:14.5px}
   .feat-list li svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;stroke:var(--good);
-    fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   /* 2x2 chip grid (Why it matters front face) */
   .feat-grid{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
   .feat-grid li{align-items:center;gap:12px;padding:14px 16px;border-radius:14px;
@@ -294,7 +297,7 @@
     background:linear-gradient(120deg,rgba(239,93,118,.14),rgba(255,255,255,.4))}
   .callout.info{border-color:rgba(79,109,255,.32);
     background:linear-gradient(120deg,rgba(79,109,255,.14),rgba(17,184,166,.06),rgba(255,255,255,.4))}
-  .callout svg{width:24px;height:24px;flex-shrink:0;stroke:var(--warn);fill:none;stroke-width:1.9;
+  .callout svg{width:24px;height:24px;flex-shrink:0;stroke:var(--warn);fill:none;stroke-width:1.7;
     stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
   .callout.info svg{stroke:var(--accent)}
   .callout h4{font-size:15.5px;margin-bottom:4px}
@@ -545,7 +548,7 @@
 
       <div class="grid">
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></div>
           <h3>How the data flows</h3>
           <p style="margin-bottom:18px">Each module fulfills a specific function, but they all operate as one chain —
             from scheduling intent to official billing.</p>
@@ -663,7 +666,7 @@
 
       <div class="grid">
         <div class="card">
-          <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg></div>
           <h3>Main screen functions</h3>
           <ul class="feat-list">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Enter e-mail &amp; password to sign in</li>
@@ -875,7 +878,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 13v8M12 3v3"/><path d="M5 6h12l2.5 3L17 12H5z"/><path d="M7 13h11l2.5 3L18 19H7z"/></svg></div>
           <h3>4 · Contract &amp; Routes Management</h3>
           <p style="margin-bottom:18px">A central parameterization area where depots, routes, loops, regular
             services and cost centers are created. It is split into three tabs:</p>
@@ -954,7 +957,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
           <h3>Master data without a screen — and the fixed IDs</h3>
           <p>Many master records have no page of their own: <strong>routes, depots, the various types</strong> (vendor /
             service / vehicle / user), <strong>cost models, trainings, service partners</strong> and <strong>ad-hoc
@@ -1148,7 +1151,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.1 7 22l5-3 5 3-1.2-8.9"/></svg></div>
           <h3>10 · Vendor Performance</h3>
           <p style="margin-bottom:10px">A management panel for analyzing service-provider performance over the
             month. With no driver selected, it shows a consolidated fleet view; an autocomplete search filters to
@@ -1231,7 +1234,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 2v20l2-1.5L8 22l2-1.5L12 22l2-1.5L16 22l2-1.5L20 22V2l-2 1.5L16 2l-2 1.5L12 2l-2 1.5L8 2 6 3.5 4 2z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
           <h3>13 · Invoices — the final block</h3>
           <p>The last structured block of the financial ecosystem. It gathers operational, financial,
             contractual and deduction data to close payment invoices for drivers and subcontractors.
@@ -1247,7 +1250,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg></div>
           <h3>Two deduction screens — don't confuse them</h3>
           <p style="margin-bottom:16px">The system has two distinct deduction surfaces. Mixing them up is a common source
             of confusion:</p>
@@ -1278,7 +1281,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg></div>
           <h3>Service Partner Invoices</h3>
           <p>Monthly invoices grouped by Service Partner, rendered as a document with the SP's header (a snapshot saved
             at issuance, with a live fallback for legacy records) and exportable to PDF. The billable operations are
@@ -1287,7 +1290,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14v4M8 18h4"/></svg></div>
           <h3>The cost models — the brain of billing</h3>
           <p style="margin-bottom:6px">Revenue calculation is centralised and understands several <strong>cost
             models</strong>, each with its own rate logic. This is what lets the system bill operations as different as a
@@ -1307,7 +1310,7 @@
         </div>
 
         <div class="card wide">
-          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
           <h3>Bank working days &amp; charge dates</h3>
           <p>Deduction charge dates never fall on a non-working day. The system computes UK <strong>bank working
             days</strong>, skipping weekends and holidays — including the "bump" of a holiday that falls on a weekend to
@@ -1350,7 +1353,7 @@
         </div>
 
         <div class="card">
-          <div class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="11" r="2.2"/><path d="M4.5 17c.6-1.6 1.9-2.3 3.5-2.3s2.9.7 3.5 2.3M15 9h4M15 13h4"/></svg></div>
           <h3>Vendor record</h3>
           <ul class="feat-list">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Depot defines which base they appear in for planning</li>
@@ -1362,7 +1365,7 @@
         </div>
 
         <div class="card">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 19 3 21V5l6-2 6 2 6-2v16l-6 2-6-2z"/><path d="M9 3v16M15 5v16"/></svg></div>
           <h3>Contracts &amp; Routes</h3>
           <ul class="feat-list">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>The depot name segments the Week Planner, DGP &amp; reports</li>
@@ -1371,7 +1374,7 @@
         </div>
 
         <div class="card">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5M17 17a3 3 0 1 0 0 0M7 7a3 3 0 1 0 0 0"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
           <h3>Auxiliary records (Assets)</h3>
           <p>Everything registered in Assets surfaces as the selectable options inside the dropdown menus across the
             other screens — keeping every record standardized.</p>
@@ -1460,7 +1463,7 @@
         </div>
 
         <div class="card">
-          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3M6.4 18.4 4 21M17.6 18.4 20 21"/></svg></div>
           <h3>Daily Operation</h3>
           <ul class="cautions">
             <li><span class="sev warn"><span class="d"></span>Attention</span><p>Blocking flow: a pending day within the last 7 days stops you from advancing. Check past pendencies before starting the day.</p></li>
